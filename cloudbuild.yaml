@@ -106,7 +106,7 @@ steps:
 
 - id: 'Test: Services'
   name: 'gcr.io/$PROJECT_ID/open-match-build'
-  args: ['make', 'GOPROXY=off', 'GOLANG_TEST_COUNT=10', 'test']
+  args: ['make', 'GOLANG_TEST_COUNT=10', 'test']
   volumes:
   - name: 'go-vol'
     path: '/go'
@@ -164,7 +164,7 @@ artifacts:
             - install/yaml/06-open-match-override-configmap.yaml
             
 substitutions:
-    _OM_VERSION: "1.0.0-rc.1"
+    _OM_VERSION: "1.0.0"
     _GCB_POST_SUBMIT: "0"
     _GCB_LATEST_VERSION: "undefined"
 logsBucket: 'gs://open-match-build-logs/'
